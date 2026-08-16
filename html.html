@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Instant English Composition - 100 Sentences</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            neon: {
+              cyan: '#00f3ff',
+              magenta: '#ff00a0',
+              purple: '#b026ff',
+              green: '#00ff66',
+              yellow: '#ffea00'
+            },
+            dark: {
+              bg: '#07090e',
+              card: '#0f172a',
+              border: 'rgba(255, 255, 255, 0.1)'
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon-cyan': '0 0 20px rgba(0, 243, 255, 0.35), inset 0 0 10px rgba(0, 243, 255, 0.2)',
+            'neon-magenta': '0 0 20px rgba(255, 0, 160, 0.35), inset 0 0 10px rgba(255, 0, 160, 0.2)',
+            'neon-purple': '0 0 20px rgba(176, 38, 255, 0.35)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Neon & Glassmorphism Aesthetics */
+    body {
+      background-color: #06080d;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(255, 0, 160, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(176, 38, 255, 0.05) 0%, transparent 60%);
+      background-attachment: fixed;
+      font-family: 'Noto Sans JP', sans-serif;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-panel-interactive {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-panel-interactive:hover {
+      background: rgba(30, 41, 59, 0.8);
+      border-color: rgba(0, 243, 255, 0.4);
+      box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    }
+
+    .text-glow-cyan {
+      text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
+    }
+    .text-glow-magenta {
+      text-shadow: 0 0 12px rgba(255, 0, 160, 0.6);
+    }
+
+    /* 3D Flip Card Effect */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 243, 255, 0.3);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 243, 255, 0.6);
+    }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- APP CONTAINER -->
+  <div class="max-w-3xl w-full mx-auto px-3 sm:px-4 py-3 flex-1 flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="glass-panel rounded-2xl p-3 mb-3 shadow-glass flex flex-col gap-2 relative overflow-hidden">
+      <div class="absolute -top-10 -right-10 w-28 h-28 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center justify-between">
+        <!-- Title & Subtitle -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-fuchsia-600 flex items-center justify-center text-black font-extrabold shadow-neon-cyan text-lg">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div>
+            <h1 class="font-outfit font-extrabold text-base sm:text-lg tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-fuchsia-400">
+              Instant English Composition
+            </h1>
+            <p class="text-[10px] sm:text-xs text-slate-400 font-medium tracking-wider">中学英文法 厳選100例文マスター</p>
+          </div>
+        </div>
+
+        <!-- Mode Switcher Tabs -->
+        <div class="flex items-center bg-slate-900/80 p-1 rounded-xl border border-white/10 text-xs font-bold">
+          <button id="tab-flashcard" onclick="switchMainView('card')" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black shadow-md">
+            <i class="fa-solid fa-clone text-xs"></i><span class="hidden sm:inline">カード</span>
+          </button>
+          <button id="tab-list" onclick="switchMainView('list')" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-list-ul text-xs"></i><span class="hidden sm:inline">一覧</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- CONTROLS BAR (CARD MODE ONLY) -->
+      <div id="controls-bar" class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-white/5 text-xs">
+        
+        <!-- Category Range Dropdown -->
+        <div class="flex flex-col">
+          <label class="text-[10px] text-slate-400 mb-0.5 flex items-center gap-1">
+            <i class="fa-solid fa-filter text-cyan-400"></i>範囲選択
+          </label>
+          <select id="range-select" onchange="applyFilters()" class="bg-slate-900/90 border border-white/15 text-slate-200 rounded-lg px-2 py-1 focus:outline-none focus:border-cyan-400">
+            <option value="all">全範囲 (1 - 100)</option>
+            <option value="g1">中1 基礎 (1 - 26)</option>
+            <option value="g2">中2 応用 (27 - 60)</option>
+            <option value="g3">中3 発展 (61 - 100)</option>
+            <option value="fav">⭐ お気に入りのみ</option>
+          </select>
+        </div>
+
+        <!-- Direction Toggle -->
+        <div class="flex flex-col">
+          <label class="text-[10px] text-slate-400 mb-0.5 flex items-center gap-1">
+            <i class="fa-solid fa-repeat text-fuchsia-400"></i>出題モード
+          </label>
+          <button id="direction-btn" onclick="toggleDirection()" class="bg-slate-900/90 border border-white/15 text-slate-200 rounded-lg px-2 py-1 font-semibold hover:border-fuchsia-400 flex items-center justify-between">
+            <span id="direction-label">日 → 英</span>
+            <i class="fa-solid fa-arrows-rotate text-[10px] text-fuchsia-400"></i>
+          </button>
+        </div>
+
+        <!-- Shuffle & Speech Toggles -->
+        <div class="flex items-center gap-1.5 pt-3 sm:pt-0">
+          <button id="shuffle-btn" onclick="toggleShuffle()" class="flex-1 bg-slate-900/90 border border-white/15 py-1.5 px-2 rounded-lg text-slate-400 hover:text-cyan-300 flex items-center justify-center gap-1 transition-all">
+            <i class="fa-solid fa-shuffle text-xs"></i><span>シャッフル</span>
+          </button>
+          <button id="tts-btn" onclick="toggleTTS()" class="bg-slate-900/90 border border-cyan-500/50 text-cyan-300 py-1.5 px-2.5 rounded-lg flex items-center justify-center gap-1 hover:bg-cyan-500/10">
+            <i class="fa-solid fa-volume-high text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Auto Play Select & Hint Toggle -->
+        <div class="flex items-center gap-1.5 pt-3 sm:pt-0">
+          <div class="flex-1 flex flex-col">
+            <select id="autoplay-select" onchange="handleAutoplayChange()" class="bg-slate-900/90 border border-white/15 text-slate-200 rounded-lg px-2 py-1 text-xs focus:outline-none focus:border-purple-400">
+              <option value="0">自動再生: OFF</option>
+              <option value="2500">自動再生: 快 (2.5s)</option>
+              <option value="4000">自動再生: 標準 (4s)</option>
+              <option value="6000">自動再生: じっくり (6s)</option>
+            </select>
+          </div>
+          <button id="hint-toggle-btn" onclick="toggleHintPermanent()" class="bg-slate-900/90 border border-white/15 text-slate-400 hover:text-yellow-400 py-1.5 px-2.5 rounded-lg flex items-center justify-center" title="ヒント常時ON/OFF">
+            <i class="fa-solid fa-lightbulb text-xs"></i>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 flex flex-col justify-center my-1 relative">
+
+      <!-- ================= FLASHCARD VIEW ================= -->
+      <div id="view-card" class="flex flex-col gap-3">
+        
+        <!-- Progress Bar & Count -->
+        <div class="flex items-center justify-between text-xs text-slate-400 px-1 font-mono">
+          <div class="flex items-center gap-2">
+            <span id="card-badge" class="px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[11px] font-sans font-bold">中1</span>
+            <span id="card-category" class="text-slate-300 text-[11px] truncate max-w-[150px] sm:max-w-[250px]">be動詞・代名詞</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="card-counter" class="text-slate-200 font-bold">1 / 100</span>
+            <button id="fav-btn" onclick="toggleBookmarkCurrent()" class="text-slate-500 hover:text-yellow-400 text-base transition-colors">
+              <i class="fa-regular fa-star"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="w-full bg-slate-900/80 rounded-full h-1.5 overflow-hidden border border-white/5">
+          <div id="progress-bar" class="bg-gradient-to-r from-cyan-400 to-fuchsia-500 h-full w-0 transition-all duration-300"></div>
+        </div>
+
+        <!-- 3D FLIP CARD CONTAINER -->
+        <div class="perspective-1000 w-full min-h-[300px] sm:min-h-[340px] my-1 cursor-pointer" onclick="flipCard()">
+          <div id="flashcard-inner" class="relative w-full h-full min-h-[300px] sm:min-h-[340px] duration-500 transform-style-3d rounded-3xl transition-transform">
+            
+            <!-- FRONT SIDE -->
+            <div class="absolute inset-0 w-full h-full glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between backface-hidden border-2 border-cyan-500/30 shadow-neon-cyan">
+              <div class="flex justify-between items-center text-xs text-cyan-400/80 font-bold uppercase tracking-wider">
+                <span id="front-label"><i class="fa-solid fa-flag-usa mr-1"></i>English</span>
+                <span class="text-[10px] text-slate-500 bg-white/5 px-2 py-0.5 rounded-full">タップで反転</span>
+              </div>
+              
+              <div class="my-auto text-center py-2 flex flex-col items-center justify-center h-full">
+                <div id="front-text" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight text-glow-cyan font-outfit tracking-wide">
+                  I am a student.
+                </div>
+
+                <!-- EXPLANATION AREA (Shown on English side when EN->JP, or JP side when JP->EN (actually only on back side makes sense for explanation, but user might want it visible when looking at the answer)) -->
+                <!-- We will hide explanation on the "Question" face -->
+
+                <!-- HINT AREA (JP to EN) -->
+                <div id="hint-box" class="hidden mt-4 pt-3 border-t border-white/10 text-xs sm:text-sm text-yellow-300 font-mono tracking-wider bg-yellow-500/10 py-1.5 px-3 rounded-xl border border-yellow-500/20 inline-block">
+                  <i class="fa-solid fa-lightbulb text-yellow-400 mr-1.5"></i><span id="hint-text">I... a... a... s...</span>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-400 text-xs">
+                <span class="text-[11px] text-slate-500"><i class="fa-solid fa-keyboard mr-1"></i>[Space] めくる</span>
+                <button onclick="event.stopPropagation(); speakCurrent()" class="p-2 rounded-xl bg-slate-800/80 hover:bg-cyan-500/20 hover:text-cyan-300 text-slate-300 transition-all border border-white/10">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- BACK SIDE -->
+            <div class="absolute inset-0 w-full h-full glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between backface-hidden rotate-y-180 border-2 border-fuchsia-500/30 shadow-neon-magenta">
+              <div class="flex justify-between items-center text-xs text-fuchsia-400/80 font-bold uppercase tracking-wider">
+                <span id="back-label"><i class="fa-solid fa-language mr-1"></i>日本語訳</span>
+                <span class="text-[10px] text-slate-500 bg-white/5 px-2 py-0.5 rounded-full">タップで反転</span>
+              </div>
+              
+              <div class="my-auto text-center py-2 flex flex-col items-center justify-center h-full">
+                <div id="back-text" class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-relaxed text-glow-magenta mb-4">
+                  私は学生です。
+                </div>
+                
+                <!-- EXPLANATION AREA (Shown on the Answer face) -->
+                <div id="explanation-box" class="mt-2 text-left bg-slate-800/50 p-3 rounded-xl border border-white/10 w-full max-w-lg">
+                  <p class="text-[11px] text-fuchsia-300 font-bold mb-1"><i class="fa-solid fa-book-open mr-1"></i>解説</p>
+                  <p id="explanation-text" class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                    I（私）が主語の時、be動詞は am を使います。「AはBです（A=B）」という状態を表します。
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-400 text-xs">
+                <span class="text-[11px] text-slate-500"><i class="fa-solid fa-keyboard mr-1"></i>[S] 音声再生</span>
+                <button onclick="event.stopPropagation(); speakCurrent()" class="p-2 rounded-xl bg-slate-800/80 hover:bg-fuchsia-500/20 hover:text-fuchsia-300 text-slate-300 transition-all border border-white/10">
+                  <i class="fa-solid fa-volume-high text-sm"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- NAVIGATION BUTTONS -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-1">
+          <button onclick="prevCard()" class="glass-panel-interactive py-3 rounded-2xl flex items-center justify-center gap-2 font-bold text-slate-300 hover:text-white active:scale-95">
+            <i class="fa-solid fa-chevron-left text-sm"></i><span>前へ</span>
+          </button>
+          
+          <button onclick="flipCard()" class="py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-fuchsia-600 font-extrabold text-black hover:opacity-90 active:scale-95 shadow-neon-purple flex items-center justify-center gap-2">
+            <i class="fa-solid fa-rotate text-sm"></i><span>めくる</span>
+          </button>
+
+          <button onclick="nextCard()" class="glass-panel-interactive py-3 rounded-2xl flex items-center justify-center gap-2 font-bold text-slate-300 hover:text-white active:scale-95">
+            <span>次へ</span><i class="fa-solid fa-chevron-right text-sm"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ================= LIST VIEW ================= -->
+      <div id="view-list" class="hidden flex-col gap-3">
+        <div class="flex items-center justify-between gap-2">
+          <div class="relative flex-1">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
+            <input type="text" id="list-search" oninput="renderSentenceList()" placeholder="英語・日本語で検索..." class="w-full bg-slate-900/90 border border-white/15 text-slate-200 text-xs rounded-xl pl-8 pr-3 py-2 focus:outline-none focus:border-cyan-400">
+          </div>
+          <span id="list-count-badge" class="text-xs font-mono text-slate-400 bg-slate-900 px-2.5 py-2 rounded-xl border border-white/10">100 items</span>
+        </div>
+
+        <div id="sentence-list-container" class="max-h-[52vh] overflow-y-auto space-y-2 pr-1">
+          <!-- Dynamically generated list items -->
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER / SHORTCUT INFO -->
+    <footer class="mt-2 text-center text-[10px] sm:text-xs text-slate-500 font-mono flex items-center justify-between px-1 py-1 border-t border-white/5">
+      <span>Instant English Composition © 100 Sentences</span>
+      <span class="hidden sm:inline">Space: 反転 | ← →: 移動 | S: 読み上げ</span>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // ==========================================
+    // 100 SENTENCES DATABASE (WITH EXPLANATIONS)
+    // ==========================================
+    const SENTENCES = [
+      // 中1 (1 - 26)
+      { id: 1, grade: 1, category: "be動詞", en: "I am a student.", jp: "私は学生です", exp: "主語が I（私）の時、be動詞は am を使います。「A＝B」という状態を表します。" },
+      { id: 2, grade: 1, category: "be動詞", en: "You are kind.", jp: "あなたは親切です", exp: "主語が You（あなた）の時、be動詞は are を使います。kind は形容詞です。" },
+      { id: 3, grade: 1, category: "be動詞", en: "He is a teacher.", jp: "彼は先生です", exp: "主語が He（彼）、She（彼女）、It（それ）など三人称単数の時、be動詞は is を使います。" },
+      { id: 4, grade: 1, category: "be動詞", en: "We are in the soccer club.", jp: "私たちはサッカー部にいます", exp: "主語が We（私たち）や They（彼ら）など複数の時、be動詞は are を使います。場所を表す時は前置詞 in を置きます。" },
+      { id: 5, grade: 1, category: "指示代名詞", en: "This is my notebook.", jp: "これは私のノートです", exp: "This（これ）は近くの単数を指します。my（私の）は所有格です。" },
+      { id: 6, grade: 1, category: "指示代名詞", en: "Is that your bag?", jp: "あれはあなたのかばんですか？", exp: "that（あれ）は遠くの単数を指します。be動詞の疑問文は、be動詞を主語の前に出します。" },
+      { id: 7, grade: 1, category: "所有格", en: "His name is Ken.", jp: "彼の名前はケンです", exp: "His（彼の）は He の所有格です。His name は三人称単数なので動詞は is になります。" },
+      { id: 8, grade: 1, category: "所有格", en: "Her cat is black.", jp: "彼女の猫は黒いです", exp: "Her（彼女の）は She の所有格です。" },
+      { id: 9, grade: 1, category: "一般動詞", en: "I have a cat.", jp: "私は猫を飼っています", exp: "be動詞以外の動詞（持つ、行くなど）を一般動詞と呼びます。語順は「主語＋動詞＋目的語」です。" },
+      { id: 10, grade: 1, category: "一般動詞・疑問", en: "Do you watch TV every day?", jp: "あなたは毎日テレビを見ますか？", exp: "一般動詞の疑問文は、文の先頭に Do を置きます。" },
+      { id: 11, grade: 1, category: "三単現", en: "He plays soccer.", jp: "彼はサッカーをします", exp: "主語が三人称単数で現在の時、一般動詞の最後に s（または es）をつけます（三単現のs）。" },
+      { id: 12, grade: 1, category: "三単現・否定", en: "She doesn't drink coffee.", jp: "彼女はコーヒーを飲みません", exp: "三単現の否定文は doesn't (does not) を使い、動詞は原形（sを取る）に戻します。" },
+      { id: 13, grade: 1, category: "命令文", en: "Clean the classroom.", jp: "教室を掃除しなさい", exp: "主語（You）を省略し、動詞の原形で始めると命令（〜しなさい）を表します。" },
+      { id: 14, grade: 1, category: "命令文", en: "Please open the door.", jp: "ドアを開けてください", exp: "命令文の先頭（または末尾）に Please をつけると丁寧な依頼になります。" },
+      { id: 15, grade: 1, category: "否定命令文", en: "Don't hurry.", jp: "急がないで", exp: "「〜してはいけない」という禁止・否定の命令は、動詞の原形の前に Don't を置きます。" },
+      { id: 16, grade: 1, category: "勧誘 Let's", en: "Let's go together.", jp: "一緒に行きましょう", exp: "「〜しましょう」と誘う時は Let's ＋ 動詞の原形を使います。" },
+      { id: 17, grade: 1, category: "疑問詞 What", en: "What is this?", jp: "これは何ですか？", exp: "疑問詞（What）は必ず文の先頭に置き、その後ろは疑問文の語順（is this）になります。" },
+      { id: 18, grade: 1, category: "疑問詞 Who", en: "Who is your teacher?", jp: "誰があなたの先生ですか？", exp: "Who（誰）が主語になる場合、後ろは（平叙文と同じように）直接動詞が続きます。" },
+      { id: 19, grade: 1, category: "疑問詞 Where", en: "Where is he?", jp: "彼はどこにいますか？", exp: "場所を尋ねる疑問詞 Where（どこ）を先頭に置きます。" },
+      { id: 20, grade: 1, category: "疑問詞 When", en: "When do you eat lunch?", jp: "あなたはいつ昼ごはんを食べますか？", exp: "時を尋ねる疑問詞 When（いつ）を先頭に置き、後ろは Do you 〜 の疑問文の語順です。" },
+      { id: 21, grade: 1, category: "There is", en: "There is a book on the desk.", jp: "机の上に本があります", exp: "「（不特定の）〜がある、いる」は There is/are を使います。単数の時は is を使います。" },
+      { id: 22, grade: 1, category: "There are", en: "There are three students in the classroom.", jp: "教室には3人の生徒がいます", exp: "主語が複数（three students）の時は There are になります。" },
+      { id: 23, grade: 1, category: "There is 疑問", en: "Is there a clock on the wall?", jp: "壁に時計がありますか？", exp: "There is/are の疑問文は、be動詞を There の前に出します。" },
+      { id: 24, grade: 1, category: "助動詞 can", en: "I can play the piano.", jp: "私はピアノを弾くことができます", exp: "能力（〜できる）を表す助動詞 can は、動詞の原形の前に置きます。" },
+      { id: 25, grade: 1, category: "助動詞 can 疑問", en: "Can she speak English?", jp: "彼女は英語を話せますか？", exp: "助動詞の疑問文は、助動詞（Can）を主語の前に出します。動詞は原形のままです（speaksにならない）。" },
+      { id: 26, grade: 1, category: "助動詞 can 否定", en: "We can't run fast.", jp: "私たちは速く走れません", exp: "否定文は助動詞の後ろに not を置きます。can't は cannot の短縮形です。" },
+
+      // 中2 (27 - 60)
+      { id: 27, grade: 2, category: "過去形", en: "I played the piano yesterday.", jp: "私は昨日ピアノを弾きました", exp: "過去の出来事は動詞を過去形にします。規則動詞は語尾に -ed をつけます。" },
+      { id: 28, grade: 2, category: "過去形・不規則", en: "He went to Tokyo last week.", jp: "彼は先週東京に行きました", exp: "went は go（行く）の不規則な過去形です。last week（先週）などの過去を表す語句を伴います。" },
+      { id: 29, grade: 2, category: "過去形・疑問", en: "Did you watch the movie?", jp: "あなたはその映画を見ましたか？", exp: "一般動詞の過去の疑問文は文頭に Did を使い、動詞は原形（watch）に戻します。" },
+      { id: 30, grade: 2, category: "過去形・否定", en: "I didn't read the book.", jp: "私はその本を読みませんでした", exp: "過去の否定文は didn't (did not) を使い、動詞は原形に戻します。" },
+      { id: 31, grade: 2, category: "現在進行形", en: "I'm doing my homework now.", jp: "私は今、宿題をしています", exp: "「（今）〜しているところだ」は＜be動詞 ＋ 動詞のing形＞で表します。" },
+      { id: 32, grade: 2, category: "現在進行形", en: "She is watching TV.", jp: "彼女はテレビを見ています", exp: "主語が She なので be動詞は is になり、その後ろに watching を置きます。" },
+      { id: 33, grade: 2, category: "進行形・疑問", en: "What are you doing?", jp: "あなたは何をしているの？", exp: "進行形の疑問文は be動詞の疑問文と同じ語順です。疑問詞 What ＋ be動詞 ＋ 主語 ＋ ing形。" },
+      { id: 34, grade: 2, category: "過去進行形", en: "They were playing games last night.", jp: "彼らは昨日の夜、ゲームをしていました", exp: "「（過去のある時に）〜していた」は＜過去のbe動詞(was/were) ＋ ing形＞で表します。" },
+      { id: 35, grade: 2, category: "未来 be going to", en: "I'm going to go to the library tomorrow.", jp: "私は明日図書館へ行くつもりです", exp: "前から決まっていた予定などは＜be going to ＋ 動詞の原形＞で表します。" },
+      { id: 36, grade: 2, category: "未来 will", en: "He will play soccer.", jp: "彼はサッカーをするでしょう", exp: "その場で決めた意志や、単なる未来の予測は助動詞 will を使います。" },
+      { id: 37, grade: 2, category: "未来・疑問", en: "What are you going to do?", jp: "あなたは何をする予定ですか？", exp: "be going to の疑問文は、be動詞を主語の前に出します。" },
+      { id: 38, grade: 2, category: "未来 be going to", en: "We are going to watch a movie tonight.", jp: "私たちは今夜映画を観る予定です", exp: "主語が We なので are going to となります。tonight は「今夜」という未来を表します。" },
+      { id: 39, grade: 2, category: "助動詞 should", en: "You should go to bed early.", jp: "あなたは早く寝るべきです", exp: "「〜すべきだ」「〜した方がいい」という助言や義務は助動詞 should を使います。" },
+      { id: 40, grade: 2, category: "助動詞 must", en: "I must go now.", jp: "私は今すぐ行かなければなりません", exp: "「〜しなければならない」という強い義務は must を使います（have to とほぼ同義）。" },
+      { id: 41, grade: 2, category: "助動詞 may", en: "May I take a picture here?", jp: "ここで写真を撮ってもいいですか？", exp: "May I 〜 ? は「〜してもよろしいですか？」と許可を求める丁寧な表現です。" },
+      { id: 42, grade: 2, category: "不定詞 名詞的用法", en: "To learn English is fun.", jp: "英語を学ぶことは楽しいです", exp: "＜to ＋ 動詞の原形＞が主語になり「〜することは」という名詞の働き（名詞的用法）をしています。" },
+      { id: 43, grade: 2, category: "不定詞 副詞的用法", en: "I went to the station to meet him.", jp: "私は彼に会うために駅へ行きました", exp: "「〜するために」と目的を表す用法（副詞的用法）です。動詞(went)を修飾しています。" },
+      { id: 44, grade: 2, category: "不定詞 形容詞的用法", en: "Give me something cold to drink.", jp: "何か冷たい飲み物ちょうだい", exp: "「飲むための何か」と前の名詞(something cold)を修飾する用法（形容詞的用法）です。-thing 形容詞 to原形 の語順になります。" },
+      { id: 45, grade: 2, category: "比較級 -er", en: "He is taller than me.", jp: "彼は私より背が高いです", exp: "2つを比較して「AはBより〜だ」という時は、形容詞・副詞に -er をつけ、後ろに than を置きます。" },
+      { id: 46, grade: 2, category: "最上級 -est", en: "This is the newest book.", jp: "これは一番新しい本です", exp: "3つ以上の中で「一番〜だ」という時は、the をつけて形容詞・副詞に -est をつけます。" },
+      { id: 47, grade: 2, category: "比較級 more", en: "This book is more interesting than that one.", jp: "この本はあの本よりおもしろい", exp: "長い単語（interesting等）の比較級は、単語の前に more をつけます。" },
+      { id: 48, grade: 2, category: "最上級", en: "I'm the tallest in my family.", jp: "私は家族の中で一番背が高い", exp: "範囲（家族の中で、など）を示す場合、単数扱いの集団には in を使います（複数は of）。" },
+      { id: 49, grade: 2, category: "最上級 most", en: "English is the most interesting subject of all.", jp: "英語はすべての中で最もおもしろい教科です", exp: "長い単語の最上級は the most をつけます。of all は「すべての中で」という範囲を表します。" },
+      { id: 50, grade: 2, category: "原級 as...as", en: "I can run as fast as you.", jp: "私はあなたと同じくらい速く走れます", exp: "「AはBと同じくらい〜だ」という同等比較は、形容詞・副詞の原形を as 〜 as で挟みます。" },
+      { id: 51, grade: 2, category: "接続詞 because", en: "I went to bed early because I was tired.", jp: "私は疲れていたので、早く寝ました", exp: "because は理由（〜だから）を表す接続詞で、後ろに＜主語＋動詞＞の文が続きます。" },
+      { id: 52, grade: 2, category: "接続詞 if", en: "If it rains, I will stay home.", jp: "もし雨が降ったら、家にいます", exp: "if は条件（もし〜なら）を表す接続詞。条件のif節の中では、未来のことでも現在形（rains）を使います。" },
+      { id: 53, grade: 2, category: "接続詞 when", en: "When he came, I was eating lunch.", jp: "彼が来たとき、私は昼ごはんを食べていました", exp: "When 節が「〜した時」という過去の時点を表し、主節が過去進行形（食べている最中だった）になっています。" },
+      { id: 54, grade: 2, category: "動名詞 主語", en: "Swimming is fun.", jp: "泳ぐことは楽しいです", exp: "動詞のing形が名詞の働き（〜すること）をして主語になっています。不定詞の名詞的用法とほぼ同じです。" },
+      { id: 55, grade: 2, category: "動名詞 目的語", en: "I like listening to music.", jp: "私は音楽を聞くことが好きです", exp: "like の目的語として動名詞（listening）が使われています。" },
+      { id: 56, grade: 2, category: "動名詞 前置詞の後", en: "He is good at speaking English.", jp: "彼は英語を話すことが得意です", exp: "at のような前置詞の後ろには、必ず名詞か動名詞（ing形）を置かなければなりません。" },
+      { id: 57, grade: 2, category: "受動態 現在", en: "This book is read by many people.", jp: "この本はたくさんの人に読まれている", exp: "「〜される」という受身の意味は＜be動詞 ＋ 過去分詞＞で表します。read は過去分詞（発音はレッド）です。" },
+      { id: 58, grade: 2, category: "受動態 過去", en: "The letter was written by him.", jp: "手紙は彼によって書かれた", exp: "過去の受動態は be動詞を過去形（was/were）にします。written は write の過去分詞です。" },
+      { id: 59, grade: 2, category: "受動態", en: "This song is loved in Japan.", jp: "この歌は日本で人気がある", exp: "直訳は「日本で愛されている」。動作主（by 〜）が不特定多数や文脈で明らかな場合は省略されます。" },
+      { id: 60, grade: 2, category: "受動態 過去", en: "The problem was solved quickly.", jp: "その問題はすぐに解決された", exp: "solved は solve（解決する）の過去分詞。quickly（すぐに）のような副詞が修飾しています。" },
+
+      // 中3 (61 - 100)
+      { id: 61, grade: 3, category: "文型 SV", en: "I swim in the pool.", jp: "私はプールで泳ぐ", exp: "第1文型（SV）。主語(S)と動詞(V)だけで文が成り立ちます。「in the pool」は修飾語（M）です。" },
+      { id: 62, grade: 3, category: "文型 SV", en: "He runs every morning.", jp: "彼は毎朝走ります", exp: "第1文型（SV）。「every morning」は時を表す修飾語（M）です。" },
+      { id: 63, grade: 3, category: "文型 SVC", en: "I'm busy.", jp: "私は忙しいです", exp: "第2文型（SVC）。be動詞を挟んで 主語(I) ＝ 補語(busy) の関係が成り立ちます。" },
+      { id: 64, grade: 3, category: "文型 SVC", en: "She became a teacher.", jp: "彼女は先生になった", exp: "第2文型（SVC）。become も「She ＝ a teacher」という状態の変化を表す動詞です。" },
+      { id: 65, grade: 3, category: "文型 SVC", en: "You look tired.", jp: "あなたは疲れて見えます", exp: "第2文型（SVC）。look は「〜に見える」という意味で「You ＝ tired」の関係を作ります。" },
+      { id: 66, grade: 3, category: "文型 SVO", en: "I study English every day.", jp: "私は毎日英語を勉強します", exp: "第3文型（SVO）。動詞の対象となる目的語（O: English）を必要とします。" },
+      { id: 67, grade: 3, category: "文型 SVO", en: "He played the piano.", jp: "彼はピアノを弾いた", exp: "第3文型（SVO）。動詞(played) ＋ 目的語(the piano) の語順です。" },
+      { id: 68, grade: 3, category: "文型 SVO", en: "She is studying Japanese.", jp: "彼女は日本語を勉強しています", exp: "第3文型（SVO）の進行形です。Japanese が目的語(O)です。" },
+      { id: 69, grade: 3, category: "文型 SVOO", en: "I sent him a letter.", jp: "私は彼に手紙を送りました", exp: "第4文型（SVOO）。「人に」「物を」という2つの目的語を動詞の直後に並べます。" },
+      { id: 70, grade: 3, category: "文型 SVOO", en: "He showed us the book.", jp: "彼は私たちにその本を見せました", exp: "第4文型（SVOO）。us（人に） ＋ the book（物を） の順に目的語を配置します。" },
+      { id: 71, grade: 3, category: "文型 SVOO", en: "He gave me flowers.", jp: "彼が私に花をくれました", exp: "第4文型（SVOO）。give ＋ 人(me) ＋ 物(flowers) の語順です。" },
+      { id: 72, grade: 3, category: "文型 SVOC", en: "He makes me happy.", jp: "彼は私を幸せにします", exp: "第5文型（SVOC）。make ＋ 目的語(me) ＋ 補語(happy) で「OをCの状態にする」という意味です。" },
+      { id: 73, grade: 3, category: "文型 SVOC", en: "Everyone calls him a hero.", jp: "みんなは彼をヒーローと呼びます", exp: "第5文型（SVOC）。call ＋ 目的語(him) ＋ 補語(a hero) で「OをCと呼ぶ」という意味です。" },
+      { id: 74, grade: 3, category: "文型 SVOC", en: "She kept the room clean.", jp: "彼女は部屋をきれいに保っていた", exp: "第5文型（SVOC）。keep ＋ 目的語(the room) ＋ 補語(clean) で「OをCの状態に保つ」という意味です。" },
+      { id: 75, grade: 3, category: "現在完了 継続", en: "I have studied English for three years.", jp: "私は3年間英語を勉強している", exp: "過去から現在まで動作が続いていることを＜have(has) ＋ 過去分詞＞で表します。for は期間（〜間）を表します。" },
+      { id: 76, grade: 3, category: "現在完了 継続", en: "He has been busy since this morning.", jp: "彼は朝からずっと忙しい", exp: "主語が三人称単数なので has を使います。be動詞の過去分詞は been。since は起点（〜から）を表します。" },
+      { id: 77, grade: 3, category: "現在完了 経験", en: "Have you ever seen this movie?", jp: "あなたはこの映画を見たことがありますか？", exp: "「〜したことがある」という経験の用法。疑問文では have を前に出し、ever（今までに）をよく伴います。" },
+      { id: 78, grade: 3, category: "現在完了 経験", en: "I have never climbed Mt. Fuji.", jp: "私は富士山に登ったことがない", exp: "経験の否定は not の代わりに never（一度も〜ない）を過去分詞の前に置きます。" },
+      { id: 79, grade: 3, category: "現在完了 経験", en: "I have been to Hokkaido twice.", jp: "私は北海道に2回行ったことがある", exp: "「〜へ行ったことがある」は have been to を使います（have gone to ではありません）。" },
+      { id: 80, grade: 3, category: "現在完了 完了", en: "She hasn't finished her homework yet.", jp: "彼女はまだ宿題を終えていない", exp: "動作が完了しているか（結果）を表す用法。否定文の末尾の yet は「まだ」という意味です。" },
+      { id: 81, grade: 3, category: "現在完了 完了", en: "He has already eaten lunch.", jp: "彼はもう昼ごはんを食べた", exp: "肯定文で already（すでに、もう）を過去分詞の前に置くと、動作が完了したことを強調します。" },
+      { id: 82, grade: 3, category: "現在分詞 修飾", en: "Look at the sleeping baby!", jp: "寝ている赤ちゃんを見て！", exp: "sleeping(現在分詞) が1語で名詞(baby)を修飾する場合、前から修飾します。" },
+      { id: 83, grade: 3, category: "現在分詞 句修飾", en: "Look at the baby sleeping on the bed!", jp: "ベッドで寝ている赤ちゃんを見て！", exp: "「on the bed」を伴い2語以上になった分詞の塊は、修飾する名詞(baby)の後ろから修飾します。" },
+      { id: 84, grade: 3, category: "過去分詞 修飾", en: "Did you see the broken window?", jp: "壊れた窓を見た？", exp: "broken(過去分詞: 壊された) が1語で名詞(window)を修飾する場合、前から修飾します。" },
+      { id: 85, grade: 3, category: "過去分詞 句修飾", en: "Did you see the window broken by Tom?", jp: "トムに壊された窓を見た？", exp: "「broken by Tom」のように2語以上の塊は、名詞(window)の後ろから修飾（後置修飾）します。" },
+      { id: 86, grade: 3, category: "現在分詞 句修飾", en: "Do you know the girl crying over there?", jp: "あそこで泣いている女の子を知ってる？", exp: "「crying over there（あそこで泣いている）」が the girl を後ろから修飾しています。" },
+      { id: 87, grade: 3, category: "過去分詞 修飾", en: "I'm using the repaired computer.", jp: "私はその修理されたパソコンを使っている", exp: "repaired（修理された）という過去分詞が単独で computer を前から修飾しています。" },
+      { id: 88, grade: 3, category: "関係代名詞 who", en: "He is the teacher who teaches English.", jp: "彼は英語を教えている先生だ", exp: "先行詞が人（the teacher）で、続く関係代名詞節の中で主語の働きをする場合 who を使います。" },
+      { id: 89, grade: 3, category: "関係代名詞 who", en: "I have a friend who lives in France.", jp: "私にはフランスに住んでいる友だちがいる", exp: "「lives in France」という説明の塊を、関係代名詞 who を使って a friend に繋げています。" },
+      { id: 90, grade: 3, category: "関係代名詞 which", en: "That is the car which runs very fast.", jp: "あれはとても速く走る車だ", exp: "先行詞が物（the car）の場合、関係代名詞 which を使って後ろから説明を加えます。" },
+      { id: 91, grade: 3, category: "関係代名詞 which", en: "This is the bag which I bought yesterday.", jp: "これは昨日買ったカバンだ", exp: "先行詞が物で、関係代名詞節の中で目的語（買った対象）の働きをする which です（省略可能）。" },
+      { id: 92, grade: 3, category: "関係代名詞 that", en: "The dog that she has is big.", jp: "彼女が飼っている犬は大きい", exp: "先行詞が人でも物でも that を使えます。ここは「The dog ＝ big」の間に説明が割り込んでいます。" },
+      { id: 93, grade: 3, category: "関係代名詞 that", en: "The person that I'm talking to is a doctor.", jp: "私が話している人は医者だ", exp: "The person に「私が話しかけている」という説明を that で繋いでいます。主語が長くなっている構造です。" },
+      { id: 94, grade: 3, category: "間接疑問文", en: "I don't know where he lives.", jp: "彼がどこに住んでいるのか知らない", exp: "疑問詞の節が文の一部になる場合、語順は疑問文（does he live）ではなく平叙文（he lives）の語順になります。" },
+      { id: 95, grade: 3, category: "間接疑問文", en: "Do you know when he will come?", jp: "彼がいつ来るか知ってる？", exp: "when 以下の間接疑問文は＜疑問詞 ＋ 主語 ＋ 動詞(will come)＞の語順になります。" },
+      { id: 96, grade: 3, category: "疑問詞+to", en: "I don't know what to do.", jp: "何をすべきかわからない", exp: "＜疑問詞 ＋ to不定詞＞で「〜すべきか」という意味の塊（名詞句）を作ります。what to do は「何をすべきか」。" },
+      { id: 97, grade: 3, category: "仮定法", en: "I wish I were rich.", jp: "私がお金持ちだったらなぁ", exp: "現在の事実に反する願望は I wish ＋ 仮定法過去（動詞の過去形）で表します。be動詞は通常 were を使います。" },
+      { id: 98, grade: 3, category: "条件の接続詞 if", en: "If it rains tomorrow, I won't go to the park.", jp: "もし明日雨が降れば、公園に行かないだろう", exp: "これは仮定法ではなく単なる条件です。未来のことでも if 節の中は現在形（rains）にします。" },
+      { id: 99, grade: 3, category: "仮定法過去", en: "If I were you, I wouldn't buy it.", jp: "もし私があなたなら、それは買わない", exp: "現在の事実に反する仮定は、if節の動詞を過去形（were）にし、主節に助動詞の過去形（would）を使います。" },
+      { id: 100, grade: 3, category: "仮定法過去", en: "If I had wings, I could fly.", jp: "もし翼があれば、飛べるのに", exp: "実際にはないものを「ある」と仮定し（had）、その結果「できるのに」を助動詞の過去形（could）で表しています。" }
+    ];
+
+    // ==========================================
+    // APP STATE
+    // ==========================================
+    let activeList = [...SENTENCES];
+    let currentIndex = 0;
+    let isFlipped = false;
+    let direction = 'jp2en'; // 'jp2en' or 'en2jp'
+    let isShuffle = false;
+    let isTTS = true;
+    let autoplayInterval = null;
+    let isHintPermanent = false;
+    let bookmarks = new Set(JSON.parse(localStorage.getItem('english_100_bookmarks') || '[]'));
+
+    // Speech Synthesis
+    const synth = window.speechSynthesis;
+
+    // ==========================================
+    // INITIALIZATION
+    // ==========================================
+    window.addEventListener('DOMContentLoaded', () => {
+      applyFilters();
+      renderSentenceList();
+      setupKeyboardControls();
+    });
+
+    // ==========================================
+    // CARD NAVIGATION & LOGIC
+    // ==========================================
+    function applyFilters() {
+      const range = document.getElementById('range-select').value;
+      
+      if (range === 'all') {
+        activeList = [...SENTENCES];
+      } else if (range === 'g1') {
+        activeList = SENTENCES.filter(s => s.grade === 1);
+      } else if (range === 'g2') {
+        activeList = SENTENCES.filter(s => s.grade === 2);
+      } else if (range === 'g3') {
+        activeList = SENTENCES.filter(s => s.grade === 3);
+      } else if (range === 'fav') {
+        activeList = SENTENCES.filter(s => bookmarks.has(s.id));
+      }
+
+      if (isShuffle) {
+        shuffleArray(activeList);
+      }
+
+      currentIndex = 0;
+      updateCardUI();
+    }
+
+    function updateCardUI() {
+      if (activeList.length === 0) {
+        document.getElementById('front-text').innerText = "該当する問題がありません";
+        document.getElementById('back-text').innerText = "条件を変更してください";
+        document.getElementById('card-counter').innerText = "0 / 0";
+        document.getElementById('progress-bar').style.width = '0%';
+        document.getElementById('explanation-box').classList.add('hidden');
+        return;
+      }
+
+      const item = activeList[currentIndex];
+      isFlipped = false;
+      document.getElementById('flashcard-inner').classList.remove('rotate-y-180');
+
+      // Set Badge
+      const gradeBadge = document.getElementById('card-badge');
+      gradeBadge.innerText = `中${item.grade}`;
+      document.getElementById('card-category').innerText = item.category;
+
+      // Set Texts depending on Direction
+      const frontLabel = document.getElementById('front-label');
+      const backLabel = document.getElementById('back-label');
+      const frontText = document.getElementById('front-text');
+      const backText = document.getElementById('back-text');
+      const explanationText = document.getElementById('explanation-text');
+      const explanationBox = document.getElementById('explanation-box');
+
+      explanationText.innerText = item.exp;
+
+      if (direction === 'jp2en') {
+        frontLabel.innerHTML = '<i class="fa-solid fa-language mr-1"></i>日本語 (問題)';
+        backLabel.innerHTML = '<i class="fa-solid fa-flag-usa mr-1"></i>English (正解)';
+        frontText.innerText = item.jp;
+        backText.innerText = item.en;
+        
+        // Hint Logic
+        setupHint(item.en);
+        
+        // Show explanation only on back side
+        explanationBox.classList.remove('hidden');
+        // If we wanted it on both sides, we'd duplicate the HTML structure for explanation, but putting it on the answer side makes sense.
+      } else {
+        frontLabel.innerHTML = '<i class="fa-solid fa-flag-usa mr-1"></i>English (問題)';
+        backLabel.innerHTML = '<i class="fa-solid fa-language mr-1"></i>日本語 (正解)';
+        frontText.innerText = item.en;
+        backText.innerText = item.jp;
+        document.getElementById('hint-box').classList.add('hidden');
+        
+        // Show explanation only on back side
+        explanationBox.classList.remove('hidden');
+      }
+
+      // Update Counters & Progress
+      document.getElementById('card-counter').innerText = `${currentIndex + 1} / ${activeList.length}`;
+      const pct = ((currentIndex + 1) / activeList.length) * 100;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+
+      // Update Bookmark Star
+      const favBtn = document.getElementById('fav-btn');
+      if (bookmarks.has(item.id)) {
+        favBtn.innerHTML = '<i class="fa-solid fa-star text-yellow-400"></i>';
+      } else {
+        favBtn.innerHTML = '<i class="fa-regular fa-star text-slate-500"></i>';
+      }
+
+      // Auto Read if Front is English and TTS enabled
+      if (isTTS && direction === 'en2jp') {
+        speakText(item.en);
+      }
+    }
+
+    function flipCard() {
+      if (activeList.length === 0) return;
+      isFlipped = !isFlipped;
+      const inner = document.getElementById('flashcard-inner');
+      
+      if (isFlipped) {
+        inner.classList.add('rotate-y-180');
+        const item = activeList[currentIndex];
+        // Read English when revealed in JP -> EN mode
+        if (isTTS && direction === 'jp2en') {
+          setTimeout(() => speakText(item.en), 150);
+        }
+      } else {
+        inner.classList.remove('rotate-y-180');
+      }
+    }
+
+    function nextCard() {
+      if (activeList.length === 0) return;
+      currentIndex = (currentIndex + 1) % activeList.length;
+      updateCardUI();
+    }
+
+    function prevCard() {
+      if (activeList.length === 0) return;
+      currentIndex = (currentIndex - 1 + activeList.length) % activeList.length;
+      updateCardUI();
+    }
+
+    // ==========================================
+    // HINT SYSTEM
+    // ==========================================
+    function setupHint(englishText) {
+      const hintBox = document.getElementById('hint-box');
+      
+      // Generate initial letter + word mask
+      const words = englishText.split(' ');
+      const hintStr = words.map(w => {
+        const cleanWord = w.replace(/[^a-zA-Z]/g, '');
+        if (cleanWord.length === 0) return w;
+        const firstLetter = cleanWord[0];
+        const restLen = cleanWord.length - 1;
+        const dots = '.'.repeat(Math.min(restLen, 3));
+        return `${firstLetter}${dots}`;
+      }).join(' ');
+
+      document.getElementById('hint-text').innerText = `${hintStr} (${words.length}語)`;
+
+      if (isHintPermanent) {
+        hintBox.classList.remove('hidden');
+      } else {
+        hintBox.classList.add('hidden');
+      }
+    }
+
+    function toggleHintPermanent() {
+      isHintPermanent = !isHintPermanent;
+      const btn = document.getElementById('hint-toggle-btn');
+      if (isHintPermanent) {
+        btn.classList.add('text-yellow-400', 'border-yellow-500/50', 'bg-yellow-500/10');
+      } else {
+        btn.classList.remove('text-yellow-400', 'border-yellow-500/50', 'bg-yellow-500/10');
+      }
+      updateCardUI();
+    }
+
+    // ==========================================
+    // CONTROLS & SETTINGS
+    // ==========================================
+    function toggleDirection() {
+      direction = direction === 'jp2en' ? 'en2jp' : 'jp2en';
+      document.getElementById('direction-label').innerText = direction === 'jp2en' ? '日 → 英' : '英 → 日';
+      updateCardUI();
+    }
+
+    function toggleShuffle() {
+      isShuffle = !isShuffle;
+      const btn = document.getElementById('shuffle-btn');
+      if (isShuffle) {
+        btn.classList.add('text-cyan-300', 'border-cyan-500/50', 'bg-cyan-500/10');
+        shuffleArray(activeList);
+      } else {
+        btn.classList.remove('text-cyan-300', 'border-cyan-500/50', 'bg-cyan-500/10');
+        // Reset order
+        applyFilters();
+      }
+      currentIndex = 0;
+      updateCardUI();
+    }
+
+    function toggleTTS() {
+      isTTS = !isTTS;
+      const btn = document.getElementById('tts-btn');
+      if (isTTS) {
+        btn.classList.add('text-cyan-300', 'border-cyan-500/50');
+        btn.classList.remove('text-slate-500', 'border-white/10');
+      } else {
+        btn.classList.remove('text-cyan-300', 'border-cyan-500/50');
+        btn.classList.add('text-slate-500', 'border-white/10');
+      }
+    }
+
+    function handleAutoplayChange() {
+      const val = parseInt(document.getElementById('autoplay-select').value);
+      if (autoplayInterval) clearInterval(autoplayInterval);
+
+      if (val > 0) {
+        autoplayInterval = setInterval(() => {
+          if (!isFlipped) {
+            flipCard();
+          } else {
+            nextCard();
+          }
+        }, val);
+      }
+    }
+
+    // ==========================================
+    // SPEECH SYNTHESIS (TTS)
+    // ==========================================
+    function speakText(text) {
+      if (!synth) return;
+      synth.cancel(); // Stop current speech
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.95;
+      utterance.pitch = 1.0;
+      synth.speak(utterance);
+    }
+
+    function speakCurrent() {
+      if (activeList.length === 0) return;
+      const item = activeList[currentIndex];
+      speakText(item.en);
+    }
+
+    // ==========================================
+    // BOOKMARKS
+    // ==========================================
+    function toggleBookmarkCurrent() {
+      if (activeList.length === 0) return;
+      const item = activeList[currentIndex];
+      if (bookmarks.has(item.id)) {
+        bookmarks.delete(item.id);
+      } else {
+        bookmarks.add(item.id);
+      }
+      localStorage.setItem('english_100_bookmarks', JSON.stringify([...bookmarks]));
+      updateCardUI();
+      renderSentenceList();
+    }
+
+    function toggleBookmarkId(id, event) {
+      if (event) event.stopPropagation();
+      if (bookmarks.has(id)) {
+        bookmarks.delete(id);
+      } else {
+        bookmarks.add(id);
+      }
+      localStorage.setItem('english_100_bookmarks', JSON.stringify([...bookmarks]));
+      updateCardUI();
+      renderSentenceList();
+    }
+
+    // ==========================================
+    // VIEWS & TABS
+    // ==========================================
+    function switchMainView(mode) {
+      document.getElementById('view-card').classList.add('hidden');
+      document.getElementById('view-list').classList.add('hidden');
+      
+      document.getElementById('controls-bar').classList.add('hidden');
+
+      // Unselect tabs
+      ['card', 'list'].forEach(m => {
+        const tab = document.getElementById(`tab-${m}`);
+        tab.className = "px-2.5 sm:px-3 py-1.5 rounded-lg transition-all text-slate-400 hover:text-white flex items-center gap-1.5";
+      });
+
+      const activeTab = document.getElementById(`tab-${mode}`);
+      activeTab.className = "px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black shadow-md font-bold";
+
+      if (mode === 'card') {
+        document.getElementById('view-card').classList.remove('hidden');
+        document.getElementById('controls-bar').classList.remove('hidden');
+      } else if (mode === 'list') {
+        document.getElementById('view-list').classList.remove('hidden');
+        renderSentenceList();
+      }
+    }
+
+    // ==========================================
+    // SENTENCE LIST RENDER
+    // ==========================================
+    function renderSentenceList() {
+      const query = document.getElementById('list-search').value.toLowerCase();
+      const container = document.getElementById('sentence-list-container');
+      container.innerHTML = '';
+
+      const filtered = SENTENCES.filter(s => 
+        s.en.toLowerCase().includes(query) || 
+        s.jp.includes(query) ||
+        s.category.includes(query)
+      );
+
+      document.getElementById('list-count-badge').innerText = `${filtered.length} items`;
+
+      filtered.forEach(s => {
+        const isFav = bookmarks.has(s.id);
+        const itemEl = document.createElement('div');
+        itemEl.className = "glass-panel p-3 rounded-xl flex items-center justify-between gap-3 border border-white/5 hover:border-cyan-500/30 transition-all";
+        itemEl.innerHTML = `
+          <div class="flex items-center gap-2.5 flex-1 min-w-0">
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shrink-0">中${s.grade}</span>
+            <div class="flex-1 min-w-0">
+              <div class="text-sm font-bold text-white font-outfit truncate">${s.id}. ${s.en}</div>
+              <div class="text-xs text-slate-400 truncate mb-1">${s.jp}</div>
+              <div class="text-[10px] text-fuchsia-300/80 truncate font-sans">${s.exp}</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button onclick="speakText('${s.en.replace(/'/g, "\\'")}')" class="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-cyan-300 hover:bg-slate-700">
+              <i class="fa-solid fa-volume-high text-xs"></i>
+            </button>
+            <button onclick="toggleBookmarkId(${s.id}, event)" class="p-2 rounded-lg bg-slate-800 ${isFav ? 'text-yellow-400' : 'text-slate-500'} hover:text-yellow-300 hover:bg-slate-700">
+              <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-star text-xs"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(itemEl);
+      });
+    }
+
+    // ==========================================
+    // KEYBOARD CONTROLS
+    // ==========================================
+    function setupKeyboardControls() {
+      document.addEventListener('keydown', (e) => {
+        // Only trigger on card mode
+        if (document.getElementById('view-card').classList.contains('hidden')) return;
+
+        if (e.code === 'Space') {
+          e.preventDefault();
+          flipCard();
+        } else if (e.code === 'ArrowRight') {
+          nextCard();
+        } else if (e.code === 'ArrowLeft') {
+          prevCard();
+        } else if (e.code === 'KeyS') {
+          speakCurrent();
+        } else if (e.code === 'KeyH') {
+          toggleHintPermanent();
+        }
+      });
+    }
+
+    // ==========================================
+    // UTILS
+    // ==========================================
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+  </script>
+</body>
+</html>
+```eof
